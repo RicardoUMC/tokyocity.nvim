@@ -12,10 +12,10 @@ M.palette = {
 
     -- ⚪ Foreground scale
     fg0 = "#FBFBFD",
-    fg1 = "#F6F6F8",
-    fg2 = "#D8E2EC",
-    fg3 = "#B7C5D3",
-    fg4 = "#8A9BA8",
+    fg1 = "#D8E2EC",
+    fg2 = "#B7C5D3",
+    fg3 = "#8A9BA8",
+    fg4 = "#6B7A86",
 
     -- 🎨 Core accents
     red = "#D95468",

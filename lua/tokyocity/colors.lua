@@ -11,10 +11,12 @@ function M.setup(palette, config)
         surface = palette.bg1,
         elevated = palette.bg2,
         overlay = palette.bg3,
+        highest = palette.bg4,
     }
 
     -- Foreground hierarchy
     colors.fg = {
+        bright = palette.fg0,
         primary = palette.fg1,
         secondary = palette.fg2,
         muted = palette.fg3,
@@ -29,20 +31,25 @@ function M.setup(palette, config)
         string = palette.green,
         constant = palette.orange,
         number = palette.peach,
-        variable = palette.fg2,
+        variable = palette.fg1,
+        builtin = palette.cyan,
+        namespace = palette.fg3,
+        macro = palette.orange,
+        member = palette.fg2,
+        punct = palette.fg4,
     }
 
     -- Diagnostics
     colors.diag = {
         error = palette.red,
-        warn = palette.amber,
+        warn = palette.yellow,
         info = palette.cyan,
-        hint = palette.teal,
+        hint = palette.blue,
     }
 
     -- Git
     colors.git = {
-        add = palette.lime,
+        add = palette.green,
         change = palette.blue,
         delete = palette.red,
     }
