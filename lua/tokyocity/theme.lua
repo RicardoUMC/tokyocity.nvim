@@ -30,8 +30,29 @@ function M.load()
     merge_groups(groups, require("tokyocity.groups.treesitter")(colors, opts))
     merge_groups(groups, require("tokyocity.groups.lsp")(colors, opts))
 
-    for group, opts in pairs(groups) do
-        vim.api.nvim_set_hl(0, group, opts)
+    -- Plugin integrations
+    local integrations = opts.integrations or {}
+    local plugin_modules = {
+        { key = "gitsigns",  mod = "tokyocity.groups.plugins.gitsigns" },
+        { key = "telescope", mod = "tokyocity.groups.plugins.telescope" },
+        { key = "cmp",       mod = "tokyocity.groups.plugins.cmp" },
+        { key = "lualine",   mod = "tokyocity.groups.plugins.lualine" },
+    }
+    for _, p in ipairs(plugin_modules) do
+        if integrations[p.key] ~= false then
+            local ok, mod = pcall(require, p.mod)
+            if ok then
+                if type(mod) == "function" then
+                    merge_groups(groups, mod(colors, opts))
+                elseif type(mod) == "table" and type(mod.load) == "function" then
+                    merge_groups(groups, mod.load(colors, opts))
+                end
+            end
+        end
+    end
+
+    for group, hl_opts in pairs(groups) do
+        vim.api.nvim_set_hl(0, group, hl_opts)
     end
 end
 
