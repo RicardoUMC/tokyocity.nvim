@@ -13,12 +13,28 @@ M.theme = nil
 --   require("lualine").setup({
 --     options = {
 --       theme                = "tokyocity",
---       section_separators   = tc.section_separators,
---       component_separators = tc.component_separators,
+--       section_separators   = tc.section_separators,   -- or tc.separators.top.section
+--       component_separators = tc.component_separators, -- or tc.separators.top.component
 --     }
 --   })
-M.section_separators = { left = "", right = "" }
-M.component_separators = { left = "│", right = "│" }
+
+-- Separator presets
+M.separators = {
+    -- Triangles pointing upward
+    bottom = {
+        section = { left = "", right = "" },
+        component = { left = " ", right = " " },
+    },
+    -- Triangles pointing downward (default)
+    top = {
+        section = { left = "", right = "" },
+        component = { left = " ", right = " " },
+    },
+}
+
+-- Defaults — bottom preset
+M.section_separators = M.separators.bottom.section
+M.component_separators = M.separators.bottom.component
 
 local function build_theme(colors)
     -- a = mode pill (most prominent)
