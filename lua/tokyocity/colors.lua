@@ -41,7 +41,7 @@ function M.setup(palette, config)
 
     -- Diagnostics
     colors.diag = {
-        error = palette.red,
+        error = palette.magenta,
         warn = palette.yellow,
         info = palette.cyan,
         hint = palette.blue,
@@ -51,13 +51,22 @@ function M.setup(palette, config)
     colors.git = {
         add = palette.green,
         change = palette.blue,
-        delete = palette.red,
+        delete = palette.magenta,
     }
 
     -- UI
     colors.ui = {
         selection = palette.selection,
         comment = palette.comment,
+    }
+
+    -- Modes
+    colors.mode = {
+        normal = palette.blue,
+        insert = palette.green,
+        visual = palette.yellow,
+        replace = palette.magenta,
+        command = palette.violet,
     }
 
     return colors
