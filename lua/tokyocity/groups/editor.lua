@@ -46,8 +46,8 @@ return function(colors, opts)
         WinBarNC = { fg = colors.fg.muted, bg = colors.bg.surface },
 
         -- Splits / Borders
-        VertSplit = { fg = colors.bg.overlay },
-        WinSeparator = { fg = colors.bg.overlay },
+        VertSplit = { fg = colors.bg.overlay, bg = column_bg },
+        WinSeparator = { fg = colors.bg.overlay, bg = column_bg },
 
         -- Popup menu
         Pmenu = { fg = colors.fg.primary, bg = colors.bg.surface },
