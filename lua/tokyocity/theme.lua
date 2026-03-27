@@ -28,15 +28,15 @@ function M.load()
     merge_groups(groups, require("tokyocity.groups.editor")(colors, opts))
     merge_groups(groups, require("tokyocity.groups.syntax")(colors, opts))
     merge_groups(groups, require("tokyocity.groups.treesitter")(colors, opts))
-    merge_groups(groups, require("tokyocity.groups.lsp")(colors, opts))
+    merge_groups(groups, require("tokyocity.groups.lsp")(colors))
 
     -- Plugin integrations
     local integrations = opts.integrations or {}
     local plugin_modules = {
-        { key = "gitsigns",  mod = "tokyocity.groups.plugins.gitsigns" },
+        { key = "gitsigns", mod = "tokyocity.groups.plugins.gitsigns" },
         { key = "telescope", mod = "tokyocity.groups.plugins.telescope" },
-        { key = "cmp",       mod = "tokyocity.groups.plugins.cmp" },
-        { key = "lualine",   mod = "tokyocity.groups.plugins.lualine" },
+        { key = "cmp", mod = "tokyocity.groups.plugins.cmp" },
+        { key = "lualine", mod = "tokyocity.groups.plugins.lualine" },
     }
     for _, p in ipairs(plugin_modules) do
         if integrations[p.key] ~= false then
