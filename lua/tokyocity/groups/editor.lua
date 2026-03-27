@@ -22,12 +22,12 @@ return function(colors, opts)
         Cursor = { fg = colors.bg.base, bg = colors.fg.primary },
         TermCursor = { fg = colors.bg.base, bg = colors.fg.primary },
         TermCursorNC = { fg = colors.bg.base, bg = colors.fg.muted },
-        CursorLine = { bg = colors.bg.overlay },
-        CursorColumn = { bg = colors.bg.overlay },
+        CursorLine = { bg = colors.bg.surface },
+        CursorColumn = { bg = colors.bg.surface },
         CursorLineNr = { fg = colors.syntax.keyword, bold = true },
         LineNr = { fg = colors.fg.subtle },
-        CursorLineSign = { bg = colors.bg.overlay },
-        CursorLineFold = { bg = colors.bg.overlay },
+        CursorLineSign = { bg = colors.bg.surface },
+        CursorLineFold = { bg = colors.bg.surface },
 
         MatchParen = { fg = colors.fg.primary, bg = colors.bg.surface, bold = true },
 
