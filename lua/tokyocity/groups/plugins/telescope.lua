@@ -20,8 +20,8 @@ return function(colors, opts)
         TelescopePreviewBorder = { fg = colors.bg.highest, bg = colors.bg.surface },
 
         -- Selection
-        TelescopeSelection = { fg = colors.fg.bright, bg = colors.bg.surface },
-        TelescopeSelectionCaret = { fg = colors.syntax.func, bg = colors.bg.surface },
+        TelescopeSelection = { fg = colors.fg.bright, bg = colors.bg.elevated },
+        TelescopeSelectionCaret = { fg = colors.syntax.func, bg = colors.bg.elevated },
 
         -- Matching and title
         TelescopeMatching = { fg = colors.syntax.constant, bold = true },
